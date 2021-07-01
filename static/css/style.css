@@ -1,0 +1,19 @@
+  
+html { height: 100%; }
+body {
+    min-height:100%; 
+    position:relative; /* al ponerlo como relativo este queda fijo */
+    padding-bottom:[footer-height] 
+}
+footer { 
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute; /* al ponerlo como absoluto este lo podemos mover */
+    left: 0 ; right: 0; bottom: 0; 
+    height:[footer-height] 
+    color: #c4a56e!important;
+}
+
+footer {
+    color: #c4a56e!important;
+}
