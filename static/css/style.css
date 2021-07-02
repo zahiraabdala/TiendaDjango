@@ -5,6 +5,9 @@ body {
     position:relative; /* al ponerlo como relativo este queda fijo */
     padding-bottom:[footer-height] 
 }
+.ajustar{
+    padding-bottom: 4em;
+}
 footer { 
     display: flex;
     justify-content: space-evenly;
@@ -16,4 +19,35 @@ footer {
 
 footer {
     color: #c4a56e!important;
+}
+.vertical{
+    flex-direction: row;
+}
+footer.vertical p{
+    align-self: flex-end;
+    padding-top: 15px;
+    
+}
+header a{
+    color: #c4a56e!important; 
+}
+.doradito{
+    color: #c4a56e!important;
+    font-size: 1em;
+    text-transform: uppercase;
+    
+}
+.doradito:hover{
+    color:white!important;
+}
+.bg-doradito{
+    background-color: #c4a56e!important;
+    color: white!important;
+    text-transform: uppercase;
+}
+
+.bg-doradito:hover{
+    background-color: white!important;
+    color: #c4a56e!important;
+    border: 1px solid #c4a56e!important;
 }

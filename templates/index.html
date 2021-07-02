@@ -1,0 +1,30 @@
+{%extends "layout.html"%} <!-- hereda la estructura de mi plantilla base, en ete caso layout.html-->
+
+{% block content %} <!--Todo lo que se ve en el index, va en este bloque-->
+
+<div class="card-group text-center m-5">
+
+    {% for x in variableProducto %}
+        <div class="card p-5 ">  
+            <div class="card-body">
+            <h2 class="card-title  mb-3">{{x.titulo}}</h2>
+            <img src="{{x.imagen.url}}" class="card-img-top my-4" width="150" height="190" alt="...">
+            <a href="#" class="btn bg-doradito d-grid gap-2 col-6 mx-auto">VER</a>
+            </div>
+        </div>   
+    {%endfor%}
+</div>
+
+<h2 class="text-center">MAS PRODUCTOS</h2>
+<ul class="list-group list-group-flush mx-5 ajustar">
+
+
+{% for x in variableProducto2 %}
+
+<li class="list-group-item text-truncate"> <b>{{x.titulo}}:</b> {{x.descripcion}}</li>
+
+{%endfor%}
+</ul>
+
+{% endblock %}
+

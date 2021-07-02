@@ -1,27 +1,27 @@
 {% url 'productos:home' as home %}
 {% load static %}
-<header class="navbar navbar-expand-lg navbar-dark bg-dark mb-0">
-        <div class="container">
+<header class="navbar navbar-expand-lg navbar-dark bg-dark mb-0 pb-0">
+        <div class="container-fluid ms-5 me-5 pb-0">
           <a class="navbar-brand" href="{{ home }}">
-            <img src="{{ MEDIA_URL }}/imagenes/yogastore.png" alt="" width="120" height="120" class="d-inline-block align-text-top"/>
+            <img src="{{ MEDIA_URL }}/imagenes/yoga_store.png" alt="" width="80" height="80" class="d-inline-block align-text-top"/>
           </a>
    
           <div>
             <ul class="navbar-nav me-auto d-flex flex-row">   
               {% if request.user.is_authenticated %}
               <li class="nav-item me-5">
-                <a class="nav-link" href="#">Logout</a>
+                <a class="nav-link  doradito "  href="#">Salir</a>
               </li>
               {% else %}
               <li class="nav-item me-5">
-                <a class="nav-link" href="#">Login</a>
+                <a class="nav-link doradito" href="#">Login</a>
               </li>
               <li class="nav-item me-5">
-                <a class="nav-link" href="#">Registro</a>
+                <a class="nav-link doradito" href="#">Registro</a>
               </li>
               {% endif %}
               <li class="nav-item me-3">
-                <a class="nav-link" href="#">Carrito<i class="fas fa-shopping-cart"></i></a>
+                <a class="nav-link doradito pt-1 ps-2" href="#"><img src="{{ MEDIA_URL }}/imagenes/carrito.png"></img></a>
               </li>
             </ul>
           </div>
