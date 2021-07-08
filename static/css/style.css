@@ -1,4 +1,3 @@
-  
 html { height: 100%; }
 body {
     min-height:100%; 
@@ -19,12 +18,14 @@ footer {
 
 footer {
     color: #c4a56e!important;
+    flex-direction: column;
+    align-items: center;
 }
 .vertical{
     flex-direction: row;
 }
 footer.vertical p{
-    align-self: flex-end;
+    align-self: center;
     padding-top: 15px;
     
 }

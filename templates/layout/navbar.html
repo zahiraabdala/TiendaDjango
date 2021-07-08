@@ -1,10 +1,4 @@
 {% url 'productos:home' as home %}
-{% url 'productos:acerca' as acerca %}
-<!--{% url 'contact' as contact_url %}
-{% url 'products:list' as product_list_url %}
-{% url 'login' as login_url %}
-{% url 'register' as register_url %}
-{% url 'cart:home' as cart_url %} -->
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3 pt-0">
     <div class="container-fluid mx-5">
@@ -15,22 +9,20 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent" >
         <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
           <li class="nav-item me-5">
-            <a class="nav-link doradito" href="{{ home }}" >Home</a>
+            <a class="nav-link doradito" href="{% url 'tienda:index' %}" >Home</a>
           </li>
           <li class="nav-item dropdown me-5">
             <a class="nav-link dropdown-toggle doradito" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Categorias
             </a>
             <ul class="dropdown-menu alert-dark" aria-labelledby="navbarDropdown">
-               <li>categoria 1</li> 
-               <li>categoria 2</li> 
-              {% for resultado in categorias %}
-                <li><a class="dropdown-item alert-link" href="/resultado/?q={{ resultado }}">{{ resultado.descripcion }}</a></li>
+              {% for resultado in variableCategoria1 %}
+                <li><a class="dropdown-item alert-link" href="#">{{ resultado.descripcion }}</a></li>
               {% endfor %}            
             </ul>
           </li>
           <li class="nav-item me-5">
-            <a class="nav-link doradito" href="{{ acerca }}">Acerca</a>
+            <a class="nav-link doradito" href="{% url 'tienda:acerca' %}">Acerca</a>
           </li>
           <li class="nav-item me-5">
             <a class="nav-link doradito" href="#">Contacto</a>
