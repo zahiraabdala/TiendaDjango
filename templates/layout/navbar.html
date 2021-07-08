@@ -17,7 +17,7 @@
             </a>
             <ul class="dropdown-menu alert-dark" aria-labelledby="navbarDropdown">
               {% for resultado in variableCategoria1 %}
-                <li><a class="dropdown-item alert-link" href="#">{{ resultado.descripcion }}</a></li>
+                <li><a class="dropdown-item alert-link" href="/search?q={{resultado}}">{{ resultado.descripcion }}</a></li>
               {% endfor %}            
             </ul>
           </li>
@@ -25,13 +25,13 @@
             <a class="nav-link doradito" href="{% url 'tienda:acerca' %}">Acerca</a>
           </li>
           <li class="nav-item me-5">
-            <a class="nav-link doradito" href="#">Contacto</a>
+            <a class="nav-link doradito" href="mailto:zahiraabdala@gmail.com">Contacto</a>
           </li>
           <li class="nav-item me-5">
             <a class="nav-link doradito" href="#">Nuevo Producto</a>
           </li>
         </ul>
-        <form    class="d-flex">
+        <form method="GET" action="{% url 'tienda:search' %}" class="d-flex">
             <input class="form-control me-2" type="search" name='q' placeholder="Search" aria-label="Search" >
             <button class="btn bg-doradito me-3" type="submit">Search</button>
     </form>

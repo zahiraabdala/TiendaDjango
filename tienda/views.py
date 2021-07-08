@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .models import Categoria, Producto #importo las clases de models, tanto de producto como de categoria
+from django.db.models import Q
+from django.views.generic.list import ListView
 
 # Create your views here.
 def index(request):
@@ -19,3 +21,15 @@ def acerca(request):
     return render(request, "acerca.html", {
         'variableCategoria1':variableCategoria1,
     })
+class search(ListView):
+    model = Producto
+    template_name = 'search.html'
+        
+    def get_queryset(self): # new
+        query = self.request.GET.get('q')
+        object_list = Producto.objects.filter( #va a filtrar segun:
+             Q(titulo__icontains=query) | #aca indico que quiero buscar por titulo y por descripcion. Podria agregar mas, pero es lo que pide en el trabajo
+             Q(descripcion__icontains=query) |
+             Q(categoria__descripcion__icontains=query)
+        )
+        return object_list 
