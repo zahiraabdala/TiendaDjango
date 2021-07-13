@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container mb-5">
     <h2 class="text-center my-5">Productos: {{ request.GET.q }}</h2>
     <ol class="list-group list-group-numbered listado">
         {% for resultado in object_list %}
@@ -17,7 +17,7 @@
         {% endfor %}
     </ol>   
 </div>
-<div class="abajo2"></div>
+<div class="abajo"></div>
 
 
 {% endblock %}
