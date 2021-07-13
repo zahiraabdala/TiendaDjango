@@ -9,7 +9,7 @@
             <div class="card-body">
             <h2 class="card-title  mb-3">{{x.titulo}}</h2>
             <img src="{{x.imagen.url}}" class="card-img-top my-4" width="150" height="190" alt="...">
-            <a href="#" class="btn bg-doradito d-grid gap-2 col-6 mx-auto">VER</a>
+            <a href="{% url 'tienda:producto' x.id %}" class="btn bg-doradito d-grid gap-2 col-6 mx-auto">VER</a>
             </div>
         </div>   
     {%endfor%}
@@ -21,7 +21,7 @@
 
 {% for x in variableProducto2 %}
 
-<li class="list-group-item text-truncate"> <b>{{x.titulo}}:</b> {{x.descripcion}}</li>
+<li class="list-group-item text-truncate"> <a href="{% url 'tienda:producto' x.id %}" class="link-dark"> <b>{{x.titulo}}:</b></a> {{x.descripcion}}</li>
 
 {%endfor%}
 </ul>

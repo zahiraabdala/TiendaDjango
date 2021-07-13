@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from .models import Categoria, Producto #importo las clases de models, tanto de producto como de categoria
 from django.db.models import Q
 from django.views.generic.list import ListView
@@ -21,6 +21,13 @@ def acerca(request):
     return render(request, "acerca.html", {
         'variableCategoria1':variableCategoria1,
     })
+def producto(request, producto_id):
+    producto = get_object_or_404(Producto, id=producto_id)
+    return render(request, "producto.html", {
+        'producto': producto,
+     })
+
+
 class search(ListView):
     model = Producto
     template_name = 'search.html'
